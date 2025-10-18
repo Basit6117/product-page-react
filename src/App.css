@@ -59,7 +59,9 @@ border-bottom: 4px solid #ffff;
     align-items: center;
 }
 /* header end */
-
+.action-icon > svg{
+  font-size: 25px;
+}
 .category-heading{
     text-transform: uppercase;
     color:#3e4152 ;
@@ -70,9 +72,10 @@ border-bottom: 4px solid #ffff;
     font-weight: 700px;
 }
 .category-items{
-display: flex;
+/* display: flex;
 flex-wrap: wrap;
-justify-content: space-evenly;
+justify-content: space-evenly; */
+padding: 30px;
 }
 .s-item{
 width: 250px;

@@ -30,9 +30,6 @@ const Card = ({products}) => {
 			</button>
 		</div>
 	</div>
-	<pre>
-
-	</pre>
    </>
                 )
             })

@@ -1,4 +1,7 @@
 import React from 'react'
+import { FaRegHeart } from "react-icons/fa";
+import { MdOutlineShoppingBag } from "react-icons/md";
+
 
 const Header = () => {
   return (
@@ -12,16 +15,16 @@ const Header = () => {
 
         <div class="action-bar">
             <div class="action-container">
-                <span class="material-symbols-outlined action-icon">
-                    favorite
+                <span class="action-icon">
+                    <FaRegHeart />
                     </span>
                 <span class="action-name">
                     Wishlist
                 </span>
             </div>
             <div class="action-container">
-                <span class="material-symbols-outlined action-icon">
-                    shopping_bag
+                <span class="action-icon">
+                    <MdOutlineShoppingBag />
                     </span>
                 <span class="action-name">
                     bag

@@ -3,6 +3,7 @@ import './App.css'
 import Card from './components/card/Card';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import ProductDetail from './components/product-details/ProductDetail';
 
 function App() {
     const [loading, setLoading] = useState(false);
@@ -49,6 +50,7 @@ function App() {
                     <Card products={products} />
                 </div>
             </main>
+            <ProductDetail />
             <Footer />
         </>
 
