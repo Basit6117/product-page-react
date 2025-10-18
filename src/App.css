@@ -42,11 +42,12 @@ header{
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
-/* padding: 28px; */
+    /* height: 100%; */
+padding: 28px;
 border-bottom: 4px solid #ffff;
 }
 .nav-bar a:hover{
-    border-bottom: 4px solid #f54e77;
+    border-bottom: 4px solid #943EF0;
 }
 .action-bar{
     display: flex;

@@ -1,66 +1,52 @@
-import React from 'react'
-import "./ProductDetail.css"
-const ProductDetail = () => {
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
+import './ProductDetail.css';
+
+const ProductDetail = ({ products }) => {
+  const { id } = useParams();
+
+  if (!products || products.length === 0) {
+    return <div>Loading product details...</div>;
+  }
+
+  const product = products.find((p) => p.id === parseInt(id));
+
+  if (!product) {
+    return <h2>Product not found</h2>;
+  }
+
   return (
-<section class="product-section">
-  <div class="product-details">
-    <h2>Product Details</h2>
-    <p>
-      The SmartWatch X100 combines style and technology with advanced health tracking,
-      long battery life, and seamless smartphone connectivity.
-    </p>
-
-    <div class="features-grid">
-      <div class="feature">
-        <h4>Features</h4>
-        <ul>
-          <li>Heart Rate & Sleep Monitoring</li>
-          <li>Water Resistant (IP68)</li>
-          <li>Bluetooth 5.0 Connectivity</li>
-          <li>7-Day Battery Life</li>
-        </ul>
+    <section className="product-section">
+      <div className="product-details">
+        <h2>{product.title}</h2>
+        <img
+          src={product.images[0]}
+          alt={product.title}
+          style={{ width: '250px', borderRadius: '10px', margin: '10px 0' }}
+        />
+        <p>{product.description}</p>
+        <h3>${product.price}</h3>
+        <p><b>Brand:</b> {product.brand}</p>
+        <p><b>Category:</b> {product.category}</p>
       </div>
 
-      <div class="specs">
-        <h4>Specifications</h4>
-        <table>
-          <tr>
-            <td>Display:</td>
-            <td>1.4" AMOLED</td>
-          </tr>
-          <tr>
-            <td>Battery:</td>
-            <td>300 mAh</td>
-          </tr>
-          <tr>
-            <td>Weight:</td>
-            <td>45 g</td>
-          </tr>
-        </table>
+      <div className="reviews">
+        <h2>Customer Reviews</h2>
+        {product.reviews.map((review)=>{
+          return(
+          <div className="review">
+          <h4>{review.reviewerName} <span>⭐⭐⭐⭐⭐</span></h4>
+          <p>{review.comment}</p>
+        </div>
+          )
+        })}
+
+        <Link to="/" className="btn btn-secondary" style={{ marginTop: '20px', display: 'inline-block' }}>
+          ⬅ Back to Products
+        </Link>
       </div>
-    </div>
-  </div>
-  <div class="reviews">
-    <h2>Customer Reviews</h2>
+    </section>
+  );
+};
 
-    <div class="review">
-      <h4>Ali Khan <span>⭐⭐⭐⭐⭐</span></h4>
-      <p>"Excellent product! The battery lasts for days and tracking is accurate."</p>
-    </div>
-
-    <div class="review">
-      <h4>Sara Malik <span>⭐⭐⭐⭐</span></h4>
-      <p>"Stylish and comfortable. Syncs perfectly with my phone."</p>
-    </div>
-
-    <div class="review">
-      <h4>Ahmed Raza <span>⭐⭐⭐</span></h4>
-      <p>"Good features but could improve screen brightness."</p>
-    </div>
-  </div>
-</section>
-
-  )
-}
-
-export default ProductDetail
+export default ProductDetail;

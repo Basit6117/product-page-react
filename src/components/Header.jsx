@@ -6,7 +6,7 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 const Header = () => {
   return (
     <header>
-        <div class="logo-cont"><a href="#"><img class="home" src="https://simicart.com/wp-content/uploads/eCommerce-logo-1.jpg" alt="" /></a></div>
+        <div class="logo-cont"><a href="#"><img class="home" src="logo.png" alt="logo"  /></a></div>
         <nav class="nav-bar">
             <a href="#">Home</a>
             <a href="#">Shop</a>
