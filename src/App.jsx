@@ -13,7 +13,7 @@ function App() {
   async function fetchProducts() {
     setLoading(true);
     try {
-      const response = await fetch(`https://dummyjson.com/products?limit=10`);
+      const response = await fetch(`https://dummyjson.com/products?limit=100`);
       const result = await response.json();
       if (result && result.products) {
         setProducts(result.products);
